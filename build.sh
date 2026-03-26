@@ -21,7 +21,6 @@ build_efi() {
 
 	objcopy -j .text -j .sdata -j .rodata -j .data -j .dynamic -j .dynsym -j .rel \
 		-j .rela -j .reloc -S --target=efi-app-x86_64 \
-		--stack 0x20000,0x20000 \
 		"${name}.so" "${name}.efi"
 
 	rm "${name}.o" "${name}.so"
